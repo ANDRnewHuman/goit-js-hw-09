@@ -51,6 +51,7 @@ function currentDifferenceDate(selectedDates) {
 
   if (selectedDates < currentDate) {
     btnStartRef.setAttribute('disabled', true);
+    window.alert('Please choose a date in the future');
     return Notify.failure('Please choose a date in the future');
   }
 
@@ -69,6 +70,7 @@ function startTimer() {
 
   if (secondsRef.textContent <= 0 && minutesRef.textContent <= 0) {
     Notify.success('Time end');
+
     clearInterval(timerId);
   } else {
     formatDate = convertMs(timeDifference);
